@@ -3,8 +3,7 @@
 
 import Vue from 'vue'
 import App from './app'
-import router from './router'
-import nprogress from 'nprogress/nprogress.js'
+// import nprogress from 'nprogress/nprogress.js'
 
 import 'normalize.css'
 import 'qiniu-js'
@@ -33,7 +32,7 @@ import './md.js'
 
 // import ws from './ws.js'
 import config from './config.js'
-import store from './store/index.js'
+// import store from './store/index.js'
 
 import PageNotFound from './components/404.vue'
 import Redirecting from './components/misc/redirecting.vue'
@@ -125,7 +124,7 @@ Vue.directive('title-dynamic', {
     }
 })
 
-nprogress.configure({ showSpinner: false })
+// nprogress.configure({ showSpinner: false })
 
 if (config.ws.enable) {
     // ws.conn.callback['notif.refresh'] = (data) => {
@@ -143,55 +142,58 @@ if (config.ws.enable) {
     // }
 }
 
-router.beforeEach(async function (to, from, next) {
-    let toUrl = null
-    store.commit('LOADING_SET', 1)
-    nprogress.start()
+export default ({ router, store }) => {
+    router.beforeEach(async function (to, from, next) {
+        let toUrl = null
+        store.commit('LOADING_SET', 1)
+        // nprogress.start()
 
-    // 重置对话框
-    store.commit('dialog/CLOSE_ALL')
-    // 试图初始化全局数据
-    await store.dispatch('tryInitLoad')
+        // 重置对话框
+        store.commit('dialog/CLOSE_ALL')
+        // 试图初始化全局数据
+        await store.dispatch('tryInitLoad')
 
-    if (to.name) {
-        if (!store.state.user.userData) {
-            if (to.name.startsWith('setting_')) {
-                toUrl = '/404'
-            } else if (to.name === 'account_notif') {
-                toUrl = '/404'
+        if (to.name) {
+            if (!store.state.user.userData) {
+                if (to.name.startsWith('setting_')) {
+                    toUrl = '/404'
+                } else if (to.name === 'account_notif') {
+                    toUrl = '/404'
+                }
+            } else {
+                if (to.name === 'account_signin' || to.name === 'account_signup') {
+                    toUrl = '/'
+                }
             }
-        } else {
-            if (to.name === 'account_signin' || to.name === 'account_signup') {
-                toUrl = '/'
+
+            if (to.name.startsWith('admin_')) {
+                if (!store.getters['user/isSiteAdmin']) {
+                    // $.message_error('当前账户没有权限访问此页面')
+                    toUrl = '/404'
+                }
             }
         }
 
-        if (to.name.startsWith('admin_')) {
-            if (!store.getters['user/isSiteAdmin']) {
-                // $.message_error('当前账户没有权限访问此页面')
-                toUrl = '/404'
-            }
+        if (toUrl) {
+            // 正常来讲loading会在afterEach中结束并让nprogress达到完成状态
+            // 如果发生了redirect，则情况有所不同
+            store.commit('LOADING_SET', 0)
+            // nprogress.done()
         }
-    }
+        return (toUrl) ? next(toUrl) : next()
+    })
 
-    if (toUrl) {
-        // 正常来讲loading会在afterEach中结束并让nprogress达到完成状态
-        // 如果发生了redirect，则情况有所不同
-        store.commit('LOADING_SET', 0)
-        nprogress.done()
-    }
-    return (toUrl) ? next(toUrl) : next()
-})
+    router.afterEach(async function (to, from, next) {
+        store.commit('LOADING_DEC', 1)
+        // nprogress.done()
+        // ga('set', 'page', location.pathname + location.hash)
+        // ga('send', 'pageview')
+    })
 
-router.afterEach(async function (to, from, next) {
-    store.commit('LOADING_DEC', 1)
-    nprogress.done()
-    // ga('set', 'page', location.pathname + location.hash)
-    // ga('send', 'pageview')
-})
-
-new Vue({
-    router,
-    store,
-    render: h => h(App)
-}).$mount('#app')
+    return new Vue({
+        store,
+        router,
+        store,
+        render: h => h(App)
+    })
+}
