@@ -16,7 +16,8 @@
             <multiselect v-model="topicInfo.board_id" :allow-empty="false" :options="boardList" :custom-label="getSelectOptionName" placeholder="选择一个板块" style="z-index: 2" open-direction="bottom"></multiselect>
         </check-row>
         <check-row :results="formErrors.content" :multi="true">
-            <markdown-editor ref="editor" v-model="topicInfo.content" rows="15" autofocus></markdown-editor>
+            <!-- <markdown-editor ref="editor" v-model="topicInfo.content" rows="15" autofocus></markdown-editor> -->
+            <mavon-editor  v-model="topicInfo.content" rows="20" autofocus></mavon-editor>
         </check-row>
         <div class="ic-form-row">
             <button class="ic-btn primary" style="float: right" type="primary" :loading="loading">{{postButtonText}}</button>
@@ -103,6 +104,8 @@ import * as qiniu from 'qiniu-js'
 import Objectid from 'objectid-js'
 // import marked from '@/md.js'
 import './topic-edit-fa.js'
+var mavonEditor = require('mavon-editor')
+import 'mavon-editor/dist/css/index.css'
 
 export default {
     data () {
@@ -362,7 +365,8 @@ export default {
     },
     components: {
         Multiselect,
-        markdownEditor
+        markdownEditor,
+        'mavon-editor': mavonEditor.mavonEditor
     }
 }
 </script>
