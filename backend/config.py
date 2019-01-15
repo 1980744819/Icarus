@@ -41,7 +41,7 @@ SIGNUP_LICENSE_HTML = '''
 # 可选配置 - 开启搜索功能（需要Elasticsearch）
 ##########################################
 
-SEARCH_ENABLE = False
+SEARCH_ENABLE = True
 ES_INDEX_NAME = 'icarus-index'
 ES_HOSTS = [{
     "host": "localhost",
