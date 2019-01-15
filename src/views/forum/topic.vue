@@ -60,12 +60,13 @@
                     </div>
                     <div v-if="mlog.items.length > 5">...</div>
                 </div>
-
-                <div style="display: flex; align-items: center;">
+		<div style="display: flex; align-items: center;">
                     <span>分享：</span>
-                    <div ref="share" class="share-component" data-disabled="douban,tencent,linkedin,diandian,google,qq,facebook,twitter"></div>
-                </div>
-
+			<div ref="share" class="share-component">
+			
+			</div>
+			
+		</div>
                 <p class="ic-hr-30" ref="comment-hr"></p>
                 <comment-list :item="topic" :cur-page="commentPage" :post-type="POST_TYPES.TOPIC"/>
             </div>
@@ -272,6 +273,7 @@ import { mapState, mapGetters, mapMutations } from 'vuex'
 import CommentList from '@/components/misc/comment-list.vue'
 import api from '@/netapi.js'
 import '@/assets/css/_forum.scss'
+import { Twitter, Google, Email, Facebook } from 'vue-socialmedia-share';
 
 export default {
     data () {
@@ -415,7 +417,11 @@ export default {
     mounted: function () {
     },
     components: {
-        CommentList
+        CommentList,
+	Twitter,
+	Email,
+	Google,
+	Facebook
     }
 }
 </script>

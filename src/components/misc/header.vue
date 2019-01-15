@@ -33,7 +33,7 @@
                         <a>管理</a>
                     </router-link>
                     <router-link v-if="isAboutPageEnable" tag="li" class="menu-item" :to="{ name: 'about' }" :class="navActive('about')">
-                        <a>关于</a>
+                        <a>热点</a>
                     </router-link>
                 </ul>
 

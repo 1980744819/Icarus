@@ -1,0 +1,19 @@
+[2019-01-14T16:50:30,057][WARN ][o.e.d.c.m.MetaDataCreateIndexService] [dNuwIsj] the default number of shards will change from [5] to [1] in 7.0.0; if you wish to continue using the default of [5] shards, you must manage this on the create index request or with an index template
+[2019-01-14T17:12:52,688][WARN ][o.e.d.c.m.MetaDataCreateIndexService] [dNuwIsj] the default number of shards will change from [5] to [1] in 7.0.0; if you wish to continue using the default of [5] shards, you must manage this on the create index request or with an index template
+[2019-01-14T17:18:39,836][WARN ][o.e.d.c.ParseField       ] [dNuwIsj] Deprecated field [exclude] used, expected [excludes] instead
+[2019-01-14T17:19:01,200][WARN ][o.e.d.c.ParseField       ] [dNuwIsj] Deprecated field [exclude] used, expected [excludes] instead
+[2019-01-14T17:19:14,743][WARN ][o.e.d.c.ParseField       ] [dNuwIsj] Deprecated field [exclude] used, expected [excludes] instead
+[2019-01-14T17:19:29,604][WARN ][o.e.d.c.ParseField       ] [dNuwIsj] Deprecated field [exclude] used, expected [excludes] instead
+[2019-01-14T17:19:48,842][WARN ][o.e.d.c.ParseField       ] [dNuwIsj] Deprecated field [exclude] used, expected [excludes] instead
+[2019-01-14T17:21:57,373][WARN ][o.e.d.c.ParseField       ] [dNuwIsj] Deprecated field [exclude] used, expected [excludes] instead
+[2019-01-14T20:51:44,552][WARN ][o.e.d.c.ParseField       ] [dNuwIsj] Deprecated field [exclude] used, expected [excludes] instead
+[2019-01-14T20:52:01,725][WARN ][o.e.d.c.ParseField       ] [dNuwIsj] Deprecated field [exclude] used, expected [excludes] instead
+[2019-01-14T20:52:14,398][WARN ][o.e.d.c.ParseField       ] [dNuwIsj] Deprecated field [exclude] used, expected [excludes] instead
+[2019-01-14T20:52:29,832][WARN ][o.e.d.c.ParseField       ] [dNuwIsj] Deprecated field [exclude] used, expected [excludes] instead
+[2019-01-15T14:42:51,349][WARN ][o.e.d.c.m.MetaDataCreateIndexService] [dNuwIsj] the default number of shards will change from [5] to [1] in 7.0.0; if you wish to continue using the default of [5] shards, you must manage this on the create index request or with an index template
+[2019-01-15T14:45:25,972][WARN ][o.e.d.c.ParseField       ] [dNuwIsj] Deprecated field [exclude] used, expected [excludes] instead
+[2019-01-15T14:45:51,369][WARN ][o.e.d.c.ParseField       ] [dNuwIsj] Deprecated field [exclude] used, expected [excludes] instead
+[2019-01-15T14:46:19,907][WARN ][o.e.d.c.ParseField       ] [dNuwIsj] Deprecated field [exclude] used, expected [excludes] instead
+[2019-01-15T14:46:33,457][WARN ][o.e.d.c.ParseField       ] [dNuwIsj] Deprecated field [exclude] used, expected [excludes] instead
+[2019-01-15T14:48:32,013][WARN ][o.e.d.c.ParseField       ] [dNuwIsj] Deprecated field [exclude] used, expected [excludes] instead
+[2019-01-15T14:48:44,132][WARN ][o.e.d.c.ParseField       ] [dNuwIsj] Deprecated field [exclude] used, expected [excludes] instead

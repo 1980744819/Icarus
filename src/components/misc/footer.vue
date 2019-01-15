@@ -1,7 +1,7 @@
 <template>
 <footer class="ic-container">
     <div class="left">
-        <div class="copyright">Powered by <a href="https://github.com/fy0/icarus" target="_blank">Icarus</a>1.4.0 WIP © 2018</div>
+        <div class="copyright">Powered by <a href="https://github.com/1980744819/Icarus.git" target="_blank">Icarus</a>2.0 WIP © 2019 北京化工大学计科1502</div>
         <span>当前共有 {{$store.state.online}} 人在线</span>
     </div>
     <div class="right">
