@@ -16,12 +16,12 @@
             <multiselect v-model="topicInfo.board_id" :allow-empty="false" :options="boardList" :custom-label="getSelectOptionName" placeholder="选择一个板块" style="z-index: 2" open-direction="bottom"></multiselect>
         </check-row>
         <check-row :results="formErrors.content" :multi="true">
-            <!-- <markdown-editor ref="editor" v-model="topicInfo.content" rows="15" autofocus></markdown-editor> -->
+            <markdown-editor ref="editor" v-model="topicInfo.content" rows="15" autofocus></markdown-editor>
             <!-- <mavon-editor  v-model="topicInfo.content" rows="20" autofocus></mavon-editor> -->
             <!-- <mavon-editor style="height: 100%" v-model="topicInfo.content" ></mavon-editor> -->
             <!-- <vue-markdown># a</vue-markdown> -->
             <!-- <md-editor v-model="topicInfo.content"></md-editor> -->
-            <mark-down/>
+            <!-- <mark-down v-model="topicInfo.content"/> -->
         </check-row>
         <div class="ic-form-row">
             <button class="ic-btn primary" style="float: right" type="primary" :loading="loading">{{postButtonText}}</button>
