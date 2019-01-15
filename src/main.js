@@ -102,6 +102,15 @@ import DialogHelper from './plugins/dialog_helper'
 import MiscHelper from './plugins/misc_helper'
 import UserHelper from './plugins/user_helper'
 
+// import mavonEditor from 'mavon-editor'
+// const {mavonEditor} = require('mavon-editor')
+// import 'mavon-editor/dist/css/index.css'
+
+import ElementUI from 'element-ui'
+import 'element-ui/lib/theme-chalk/index.css'
+
+// Vue.use(mavonEditor)
+Vue.use(ElementUI)
 Vue.use(ConfigHelper)
 Vue.use(DialogHelper)
 Vue.use(MiscHelper)
@@ -191,6 +200,7 @@ router.afterEach(async function (to, from, next) {
 })
 
 new Vue({
+    el: '#app',
     router,
     store,
     render: h => h(App)

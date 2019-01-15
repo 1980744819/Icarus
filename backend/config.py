@@ -14,7 +14,7 @@ SITE_NAME = 'Icarus'  # 站点名称
 SITE_URL = 'http://localhost:8080'  # 必填，站点地址，末尾不要带 /
 SITE_CONTACT_EMAIL = '1980744819@qq.com'  # 必填，管理员联系邮箱，用于用户回报站点错误
 
-HOST = '127.0.0.1'
+HOST = '0.0.0.0'
 PORT = 9999
 DEBUG_LEVEL = logging.DEBUG
 CORS_OPTIONS = CORSOptions('*', allow_credentials=True, expose_headers='*', allow_headers='*')

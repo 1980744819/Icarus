@@ -16,9 +16,12 @@
     "animate.css": "^3.7.0",
     "animejs": "^2.2.0",
     "asmcrypto.js": "^2.3.2",
+    "auto-textarea": "^1.4.0",
     "color": "^3.0.0",
     "easymde": "^2.4.0",
+    "markdown-it": "^8.4.2",
     "marked": "^0.5.1",
+    "mavon-editor": "^2.6.17",
     "murmurhash": "^0.0.2",
     "normalize.css": "^8.0.0",
     "nprogress": "^0.2.0",
@@ -35,7 +38,12 @@
     "vue-router": "^3.0.1",
     "vuex": "^3.0.1",
     "zingtouch": "^1.0.6",
-    "mavon-editor": "2.6.17"
+    "vue-markdown":"^2.2.4",
+    "element-ui":"^2.4.11",
+    "katex":"^0.10.0",
+    "stackedit-js":"^1.0.7",
+    "vue-meditor":"^0.9.3"
+
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.0.4",

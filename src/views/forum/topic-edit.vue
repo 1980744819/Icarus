@@ -17,7 +17,11 @@
         </check-row>
         <check-row :results="formErrors.content" :multi="true">
             <!-- <markdown-editor ref="editor" v-model="topicInfo.content" rows="15" autofocus></markdown-editor> -->
-            <mavon-editor  v-model="topicInfo.content" rows="20" autofocus></mavon-editor>
+            <!-- <mavon-editor  v-model="topicInfo.content" rows="20" autofocus></mavon-editor> -->
+            <!-- <mavon-editor style="height: 100%" v-model="topicInfo.content" ></mavon-editor> -->
+            <!-- <vue-markdown># a</vue-markdown> -->
+            <!-- <md-editor v-model="topicInfo.content"></md-editor> -->
+            <mark-down/>
         </check-row>
         <div class="ic-form-row">
             <button class="ic-btn primary" style="float: right" type="primary" :loading="loading">{{postButtonText}}</button>
@@ -102,10 +106,13 @@ import api from '@/netapi.js'
 import nprogress from 'nprogress/nprogress.js'
 import * as qiniu from 'qiniu-js'
 import Objectid from 'objectid-js'
-// import marked from '@/md.js'
+import marked from '@/md.js'
 import './topic-edit-fa.js'
-var mavonEditor = require('mavon-editor')
+import { mavonEditor } from 'mavon-editor'
 import 'mavon-editor/dist/css/index.css'
+import VueMarkdown from 'vue-markdown'
+import mdEditor from '@/components/misc/md-editor'
+import MarkDown from 'vue-meditor'
 
 export default {
     data () {
@@ -366,7 +373,11 @@ export default {
     components: {
         Multiselect,
         markdownEditor,
-        'mavon-editor': mavonEditor.mavonEditor
+        mavonEditor,
+        // 'mavon-editor': mavonEditor,
+        VueMarkdown,
+        mdEditor,
+        MarkDown
     }
 }
 </script>
